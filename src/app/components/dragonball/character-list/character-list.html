@@ -1,0 +1,19 @@
+<h3>{{ listName()}}</h3>
+            <ul class="list-group">
+                @for(character of characters(); track character.id; let idx = $index) {
+                    @if (character.power > 500) {
+                         <li class="list-group-item">{{ idx + 1 }} {{ character.name }} - 
+                        <strong [class.text-danger]="character.power > 9000"
+                                [class.text-info]="character.power < 9000"> 
+                                {{ character.power }}
+                        </strong>
+                        <!-- <strong ngClass="powerClass()">
+                             {{ character.power }}
+                        </strong> -->
+                    </li>
+                    } @else {
+                        <li><strong>AQUI NO HAY NAIDE</strong></li>
+                    }
+                   
+                }
+            </ul>

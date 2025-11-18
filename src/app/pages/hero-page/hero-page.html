@@ -1,0 +1,27 @@
+<h1>{{ name() }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name() }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ age() }}</dd>
+
+  <td>Método:</td>
+  <dd>{{ heroDescription() }}</dd>
+
+  <td>Capitalizado:</td>
+  <!-- ! Intentar  -->
+   <!-- Es mejor una señal cumputed ya que el pipe uppercase es suficiente; pero si lo vas a usar en varios lugares o quieres mantener la lógica centralizada, computed es la mejor práctica. -->
+  <!-- <dd> {{ capitalizeName() }} </dd> -->
+   
+  <dd> {{ name() | uppercase}} </dd>
+</dl>
+
+<button (click)="changeHero()" class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<button (click)="changeAge()" class="btn btn-success">Cambiar edad</button>
+
+<button (click)="resetForm()" class="btn btn-danger mx-2">Reset</button>
